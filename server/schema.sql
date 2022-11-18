@@ -10,19 +10,20 @@ CREATE DATABASE chat;
 
 USE chat;
 
-CREATE TABLE users (
-  id INT NOT NULL,
-  username VARCHAR(20),
+CREATE TABLE messages (
+  id INT NOT NULL AUTO_INCREMENT,
+  words VARCHAR(255) NOT NULL,
+  usersId INT NOT NULL,
+  roomname VARCHAR(30),
   PRIMARY KEY(id)
 );
 
-CREATE TABLE messages (
-  id INT NOT NULL,
-  words VARCHAR(255),
-  user_id INT NOT NULL,
-  roomname INT NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES users(id)
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(20) NOT NULL,
+  PRIMARY KEY(id)
 );
+
 
 
 /* Create other tables and define schemas for them here! */

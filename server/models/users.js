@@ -1,6 +1,16 @@
 var db = require('../db');
 
 module.exports = {
-  getAll: function () {}, //method to get all users
-  create: function () {} //method to add new user
+  getAll: function (callback) {
+    var queryString = 'SELECT * FROM users';
+    db.query(queryString, (err, result) => {
+      callback(err, result);
+    });
+  }, //method to get all users
+  create: function (givenUser, callback) {
+    var insertString = 'INSERT INTO users(username) VALUES (?)';
+    db.query(insertString, givenUser, (err, result) => {
+      callback(err, result);
+    });
+  }
 };

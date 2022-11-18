@@ -4,8 +4,8 @@
  */
 
 var Sequelize = require('sequelize');
-var db = new Sequelize('chatter', 'root', '');
-/* TODO this constructor takes the database name, username, then password.
+var db = new Sequelize('chat', 'root', '');
+/* this constructor takes the database name, username, then password.
  * Modify the arguments if you need to */
 
 /* first define the data structure by giving property names and datatypes
@@ -42,3 +42,4 @@ User.sync()
     console.error(err);
     db.close();
   });
+
